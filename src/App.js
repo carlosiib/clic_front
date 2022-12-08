@@ -22,7 +22,7 @@ function App() {
     let isUnmounted = false;
     async function getData() {
       try {
-        const endpoint = await fetch("http://localhost:5000")
+        const endpoint = await fetch("https://clic-backend-rwl.up.railway.app/")
         const data = await endpoint.json()
         if (!isUnmounted) {
           setLoading(true)
