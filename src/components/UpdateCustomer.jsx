@@ -2,6 +2,7 @@ import { useState } from "react"
 import Modal from "./Modal"
 
 export default function UpdateCustomers({ customers, updatedData }) {
+
   const [modalContent, setModalContent] = useState()
   const [isOpen, setIsOpen] = useState(false)
 
@@ -15,6 +16,8 @@ export default function UpdateCustomers({ customers, updatedData }) {
   function closeModal() {
     setIsOpen(false)
   }
+
+  if (!customers) return
 
   return (
     <div>

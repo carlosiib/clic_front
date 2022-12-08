@@ -19,22 +19,28 @@ function App() {
 
 
   useEffect(() => {
+    let isUnmounted = false;
     async function getData() {
       try {
-        const endpoint = await fetch("http://localhost:5000/")
+        const endpoint = await fetch("http://localhost:5000")
         const data = await endpoint.json()
-        setLoading(true)
-        setCustomers(data)
-        console.log(data)
+        if (!isUnmounted) {
+          setLoading(true)
+          setCustomers(data)
+          console.log(data)
+        }
       } catch (error) {
         console.log(error)
       }
     }
     getData()
 
+    return () => { isUnmounted = true; }
   }, [])
 
-  function search(rows) {
+  function search(rows = []) {
+    console.log(rows)
+    if (rows.length === 0) return false
     return rows.filter(row => row.email.toLowerCase().indexOf(query) > -1
       || row.first_name.toLowerCase().indexOf(query) > -1
       || row.state.toLowerCase().indexOf(query) > -1)

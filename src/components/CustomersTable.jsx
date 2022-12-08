@@ -1,4 +1,5 @@
 export default function Customers({ customers }) {
+  if (!customers) return false
   return (
     <div>
       <table className="table table-bordered">

@@ -94,8 +94,7 @@
   z-index: 100;
 }
 
-.modalContent {
-}
+
 .modalClose {
   background-color: transparent;
   border: none;
@@ -118,6 +117,8 @@
 .modalForm__input {
   margin-top: 2rem;
 }
+
+
 
 .notFound_container {
   display: grid;
