@@ -16,7 +16,7 @@ export default function Modal({ content, isOpen, closeModal, updatedData }) {
     e.preventDefault()
     setCompletedRequest(true)
     try {
-      const put_request = await fetch("https://clic-backend-rwl.up.railway.app/update", {
+      const put_request = await fetch("https://clic-backend-heroku.herokuapp.com/update", {
         method: "PUT",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id: formRef.current.id.value, password, firstName, })

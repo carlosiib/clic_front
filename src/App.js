@@ -22,7 +22,7 @@ function App() {
     let isUnmounted = false;
     async function getData() {
       try {
-        const endpoint = await fetch("https://clic-backend-rwl.up.railway.app")
+        const endpoint = await fetch("https://clic-backend-heroku.herokuapp.com")
         const data = await endpoint.json()
         if (!isUnmounted) {
           setLoading(true)
